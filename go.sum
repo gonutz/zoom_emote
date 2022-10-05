@@ -1,0 +1,5 @@
+github.com/gonutz/input v1.1.0 h1:x0bJgxw1Ub6xsFkCWbBMn3j3X9M/RlSviJhBtP9laKs=
+github.com/gonutz/input v1.1.0/go.mod h1:DGAj+rQk1cUZlQVmN/DVeYwcaZyYETg+FefI2nye1zA=
+github.com/gonutz/w32/v2 v2.2.0/go.mod h1:MgtHx0AScDVNKyB+kjyPder4xIi3XAcHS6LDDU2DmdE=
+github.com/gonutz/w32/v2 v2.5.0 h1:jrVn1waNTiYzbbbJIu8+CCl87t6LkTvRTJ5wAe5wwPg=
+github.com/gonutz/w32/v2 v2.5.0/go.mod h1:MgtHx0AScDVNKyB+kjyPder4xIi3XAcHS6LDDU2DmdE=
