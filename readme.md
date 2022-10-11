@@ -53,3 +53,9 @@ The program only works on Windows.
 This program may or may not work on your machine, it was only tested on my
 machine. The screenshot of the 'Reactions' icon was taken at 100% scale, some
 Windows machines come with 125% scale which might cause problems.
+
+Zoom might have updated their icons between this program's last commit and you
+using it.
+
+You might have different settings on your machine of where your icons are, this
+program assumes they are at the bottom of the Zoom window.
