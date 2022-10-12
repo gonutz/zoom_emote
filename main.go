@@ -77,9 +77,11 @@ func emote(window auto.Window, relative position) {
 		return
 	}
 
+	startX, startY, _ := auto.MousePosition()
 	auto.ClickLeftMouseAt(x+20, y+20)
 	time.Sleep(100 * time.Millisecond)
 	auto.ClickLeftMouseAt(x+relative.x, y+relative.y)
+	auto.MoveMouseTo(startX, startY)
 }
 
 func searchImageForPattern(space, pattern image.Image) (x, y int, found bool) {
