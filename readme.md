@@ -32,7 +32,11 @@ which correspond to the respective emoji. Pass these words directly, no '-' or
 Installation
 ------------
 
-	go install github.com/gonutz/zoom_emote@latest
+	go install -ldflags="-H=windowsgui" github.com/gonutz/zoom_emote@latest
+
+where the flag is for creating a Windows program instead of a console program.
+If you do not set this flag, a console window pops up when you start the
+program.
 
 On Windows
 
