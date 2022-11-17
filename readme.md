@@ -4,12 +4,10 @@ Emote in Zoom with Keyboard Shortcuts
 This program:
 
 	- finds a window with "Zoom Meeting" in its title
-	- looks for the 'Reactions' icon at the bottom of the screen
+	- looks for the 'Reactions' icon at the bottom of the window
+	- clicks Alt to toggle the menu if no 'Reactions' were found
 	- clicks the 'Reactions' icon
 	- depending on the arguments, clicks one of the emoji icons
-
-The buttons at the bottom must be visible, press the Alt key to toggle the
-buttons.
 
 Arguments you can pass to this program are:
 

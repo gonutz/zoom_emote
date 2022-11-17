@@ -51,7 +51,14 @@ func main() {
 	for _, window := range windows {
 		if window.Visible && !window.Minimized &&
 			strings.Contains(window.Title, "Zoom Meeting") {
-			emote(window, pos)
+			if !emote(window, pos) {
+				// If the icon was not found, the icon bar might not be
+				// expanded, so expand it with the Alt shortcut.
+				window.BringToForeground()
+				auto.TypeKey(auto.KeyLeftAlt)
+				time.Sleep(500 * time.Millisecond)
+				emote(window, pos)
+			}
 			return
 		}
 	}
@@ -60,7 +67,7 @@ func main() {
 //go:embed reactions_icon.png
 var reactionsIconPng []byte
 
-func emote(window auto.Window, relative position) {
+func emote(window auto.Window, relative position) bool {
 	r := window.Content
 	zoom, err := auto.CaptureScreen(r.X, r.Y+r.Height-100, r.Width, 100)
 	if err != nil {
@@ -74,7 +81,7 @@ func emote(window auto.Window, relative position) {
 
 	x, y, found := searchImageForPattern(zoom, pattern)
 	if !found {
-		return
+		return false
 	}
 
 	startX, startY, _ := auto.MousePosition()
@@ -82,6 +89,7 @@ func emote(window auto.Window, relative position) {
 	time.Sleep(100 * time.Millisecond)
 	auto.ClickLeftMouseAt(x+relative.x, y+relative.y)
 	auto.MoveMouseTo(startX, startY)
+	return true
 }
 
 func searchImageForPattern(space, pattern image.Image) (x, y int, found bool) {
